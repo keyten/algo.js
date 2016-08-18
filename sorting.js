@@ -19,3 +19,22 @@ function bubbleSort(arr){
 	}
 	return arr;
 }
+
+/*
+ * Performance: O(n^2) [ O(n); O(n^2) ]
+ */
+function gnomeSort(arr){
+	// cloning the array
+	arr = Array.prototype.slice.call(arr);
+	
+	var i = 0;
+	while(i < arr.length){
+		if(i === 0 || arr[i - 1] <= arr[i]){
+			i++;
+		} else {
+			[arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+			i--;
+		}
+	}
+	return arr;
+}
