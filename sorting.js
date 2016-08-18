@@ -38,3 +38,22 @@ function gnomeSort(arr){
 	}
 	return arr;
 }
+
+/*
+ * Performance: O(n^2) [ O(n); O(n^2) ]
+ */
+function insertionSort(arr){
+	// cloning the array
+	arr = Array.prototype.slice.call(arr);
+	
+	for(var i = 1; i < arr.length; i++){
+		var key = arr[i];
+		var j = i - 1;
+		while(j > 0 && arr[j] > key){
+			arr[j+1] = arr[j];
+			j--;
+		}
+		arr[j+1] = key;
+	}
+	return arr;
+}
