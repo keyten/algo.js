@@ -57,3 +57,22 @@ function insertionSort(arr){
 	}
 	return arr;
 }
+
+/*
+ * Performance: O(n^2)
+ */
+function selectionSort(arr){
+	// cloning the array
+	arr = Array.prototype.slice.call(arr);
+	
+	for(var min = 0; min < arr.length - 1; min++){
+		var least = min;
+		for(var j = min + 1; j < arr.length; j++){
+			if(arr[j] < arr[least]){
+				least = j;
+			}
+		}
+		[arr[min], arr[least]] = [arr[least], arr[min]];
+	}
+	return arr;
+}
