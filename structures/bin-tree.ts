@@ -20,4 +20,8 @@ export class BinTree<T> {
     value(i: number){
         return this.values[i];
     }
+
+    get size(){
+        return this.values.length;
+    }
 }
