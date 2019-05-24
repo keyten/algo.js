@@ -6,15 +6,15 @@ export class BinTree<T> {
     values: T[];
 
     left(i: number){
-        return i * 2;
-    }
-
-    right(i: number){
         return i * 2 + 1;
     }
 
+    right(i: number){
+        return i * 2 + 2;
+    }
+
     parent(i: number){
-        return Math.floor(i / 2);
+        return Math.floor((i - 1) / 2);
     }
 
     value(i: number){
